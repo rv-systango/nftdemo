@@ -1,0 +1,46 @@
+.btn-theme {
+  border: 1px solid transparent;
+  background-color: green;
+  color: white;
+  padding: 6px 20px;
+  margin: 3px;
+  border-radius: 4px;
+  cursor: pointer;
+  box-shadow: 0px 0px 50px inset rgba($color: #000000, $alpha: 0.3);
+  transition: all 0.3s ease;
+  &:hover {
+    color: rgba($color: #ffffff, $alpha: 0.9);
+    box-shadow: 0px 0px 50px inset rgba($color: #000000, $alpha: 0);
+  }
+}
+
+.btn-toggle {
+    border: 1px solid transparent;
+    background-color: rgb(206, 14, 14);
+    color: white;
+    padding: 6px 20px;
+    margin: 3px;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: 0px 0px 50px inset rgba($color: #000000, $alpha: 0.3);
+    transition: all 0.3s ease;
+    &:hover {
+      color: rgba($color: #ffffff, $alpha: 0.9);
+      box-shadow: 0px 0px 50px inset rgba($color: #000000, $alpha: 0);
+    }
+    &.active{
+        background-color: rgb(13, 153, 48);
+    }
+  }
+
+  .btn-disabled {
+    border: 1px solid rgb(206, 206, 206);
+    background-color: rgb(226, 226, 226);
+    color: rgb(136, 134, 134);
+    padding: 6px 20px;
+    margin: 3px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    pointer-events: none;
+  }
