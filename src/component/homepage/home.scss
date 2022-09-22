@@ -3,7 +3,7 @@
   flex-direction: column;
   height: 100vh;
   overflow: auto;
-  background-color: rgb(217, 226, 226);
+  background-color: rgb(227, 220, 230);
 
   .header {
     display: flex;
@@ -20,23 +20,27 @@
       color: rgb(31, 34, 31);
       font-family: Arial, Helvetica, sans-serif;
       font-weight: bold;
+
+      .sub-title {
+        font-size: 12px;
+        color: green;
+      }
     }
   }
 }
 
 .page-layout {
   display: flex;
+  text-align: center;
   width: 100%;
-  overflow-y: scroll;
-  justify-content: space-between;
-  padding: 15px 0px;
+  overflow-y: auto;
 
   .sec {
     display: flex;
     justify-content: center;
     gap: 35px;
     row-gap: 40px;
-    padding: 5px 20px;
+    padding: 15px 20px;
     flex: 1;
     margin-bottom: 15px;
     font-size: 14px;

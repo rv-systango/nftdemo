@@ -1,6 +1,6 @@
 const env = {
     testnet : {
-        contract_address: "0x1Ce563C374052358Bd87DA0887F2531bb4191E07",
+        contract_address: "0x790fcC4464E3857CAb14535c9aDd827e01b06d46",
         infura_address : "https://ropsten.infura.io/v3/69fa7729bf15497588dde6ee33b38e33",
         chain_id: 3,
         network_name : "Ropsten"
