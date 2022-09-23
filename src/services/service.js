@@ -67,7 +67,6 @@ export default class service {
       contract
         .mintNFT(index, address)
         .then((response) => {
-          console.log(response);
           callback(true);
           const interval = setInterval(async () => {
             provider.getTransactionReceipt(response?.hash || "").then((res) => {
