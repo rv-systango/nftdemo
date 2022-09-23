@@ -1,5 +1,7 @@
+import { CircularProgress } from "@mui/material";
 import React, { useContext, useEffect, useState } from "react";
 import { AppContext } from "../../App";
+import service from "../../services/service";
 import NFTCard from "../nftcard";
 import "./home.scss";
 
@@ -9,23 +11,39 @@ export default function Homepage() {
   const btnClass = `btn-toggle ${appstate.connected ? "active" : ""}`;
   const btnText = appstate.connected ? "Connected" : "Disconnected";
   const [nfts, setNfts] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(init, []);
+  useEffect(retrieveNFTS, [appstate?.contract]);
+  useEffect(updateContract, [appstate.connected]);
 
   function init() {
     // clear
     // retrieve nfts by using smart contract
+    service.connectContract(setAppstate);
   }
 
-  async function retrieveNFTS(contract) {
+  function retrieveNFTS(contract) {
     // clear
     // retrieve nfts by using contract.retrieveNFTs();
+    if(!appstate.contract) return;
+    service.retrieveNFTs(appstate.contract).then((res) => {
+      setNfts(res);
+      setLoading(false);
+    });
   }
 
   const connectionHandler = async () => {
     // clear
     // connect to metamask
+    // setAppstate((s) => ({...s, connected : !appstate.connected}));
+    service.connectWallet(setAppstate);
   };
+
+  function updateContract(){
+    if(!appstate.connected) return;
+    service.updateContract(setAppstate);
+  }
 
   const connectedText = (
     <div className="sub-title">
@@ -54,7 +72,7 @@ export default function Homepage() {
     <div className="homepage_container">
       <div className="header">{headerContent}</div>
       <div className="page-layout">
-        <div className="sec section1">{nfts.map(generateNFTCards)}</div>
+        <div className="sec section1">{loading ? <CircularProgress color="secondary" /> : nfts.map(generateNFTCards)}</div>
       </div>
     </div>
   );

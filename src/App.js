@@ -6,7 +6,7 @@ import Homepage from "./component/homepage";
 export const AppContext = React.createContext();
 export default function App() {
 
-  const [appstate, setAppstate] = useState({ connected: false, connectedAddress: "", });
+  const [appstate, setAppstate] = useState({ connected: false, connectedAddress: "", contract : null });
 
   return (
     <AppContext.Provider value={{appstate, setAppstate}}>
