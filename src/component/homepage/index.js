@@ -19,7 +19,7 @@ export default function Homepage() {
 
   function init() {
     // clear
-    // retrieve nfts by using smart contract
+    // connect to smart contract
     service.connectContract(setAppstate);
   }
 
@@ -40,8 +40,8 @@ export default function Homepage() {
     service.connectWallet(setAppstate);
   };
 
-  function updateContract(){
-    if(!appstate.connected) return;
+  function updateContract() {
+    if (!appstate.connected) return;
     service.updateContract(setAppstate);
   }
 
@@ -72,7 +72,13 @@ export default function Homepage() {
     <div className="homepage_container">
       <div className="header">{headerContent}</div>
       <div className="page-layout">
-        <div className="sec section1">{loading ? <CircularProgress color="secondary" /> : nfts.map(generateNFTCards)}</div>
+        <div className="sec section1">
+          {loading ? (
+            <CircularProgress color="secondary" />
+          ) : (
+            nfts.map(generateNFTCards)
+          )}
+        </div>
       </div>
     </div>
   );

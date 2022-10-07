@@ -1,9 +1,9 @@
 const env = {
     testnet : {
-        contract_address: "0x790fcC4464E3857CAb14535c9aDd827e01b06d46",
-        infura_address : "https://ropsten.infura.io/v3/69fa7729bf15497588dde6ee33b38e33",
-        chain_id: 3,
-        network_name : "Ropsten"
+        contract_address: "0x33e21D288A930E2da060B2FD83Dcdc76A4376159",
+        infura_address : "https://goerli.infura.io/v3/69fa7729bf15497588dde6ee33b38e33",
+        chain_id: 5,
+        network_name : "Goerli"
     },
     mainnet : {
         contract_address: "0x1Ce563C374052358Bd87DA0887F2531bb4191E07",
